@@ -1,3 +1,4 @@
+import './src/utils/web-alert';
 import * as React from 'react';
 import { ActivityIndicator, StyleSheet, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
