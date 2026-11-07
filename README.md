@@ -89,7 +89,3 @@ src/
 - ZIP files must be unzipped before importing.
 - The file picker and file reading follow the Expo documentation but have had limited testing across different devices.
 - The parser was built and tested against sample structures of the Instagram export. If your file fails to import, please open an issue (remove usernames from any sample you share).
-
-## License
-
-See the [LICENSE](LICENSE) file.
