@@ -15,6 +15,7 @@ You import your own official Instagram data export. There is no login, no passwo
 - **Local save**: your data is stored on the device, so it is still there when you reopen the app.
 - **Settings**: import again, delete old imports, or delete all data.
 - Hanko-seal style avatars (each username keeps its own colour), a seigaiha wave pattern background and a Fuji and red sun welcome banner.
+- Import straight from the Instagram ZIP, no unzipping needed.
 
 ## Tech stack
 
@@ -50,10 +51,9 @@ npx expo start -c
 ## How to use
 
 1. Request your data from Instagram (Accounts Center, then download your information) and choose the **JSON** format. Include followers and following.
-2. Unzip the download on your phone or computer. The app cannot read ZIP files directly.
-3. Open the app and tap **Import files**.
-4. Select `followers_1.json` and `following.json` together.
-5. Explore the dashboard and lists. Import again later and use **Compare** to see what changed.
+2. Open the app and tap **Import files**.
+3. Select the Instagram ZIP you downloaded. You can also select `followers_1.json` and `following.json` together if you have unzipped it.
+4. Explore the dashboard and lists. Import again later and use **Compare** to see what changed.
 
 ## Scripts
 
@@ -86,6 +86,6 @@ src/
 ## Known limitations
 
 - Unfollowing happens in Instagram itself. The app only opens the profile for you, so in-app unfollow is not possible.
-- ZIP files must be unzipped before importing.
+- Very large ZIP exports (hundreds of MB, for example with photos) are read fully into memory and may be slow or fail on phones. Request only followers and following when downloading.
 - The file picker and file reading follow the Expo documentation but have had limited testing across different devices.
 - The parser was built and tested against sample structures of the Instagram export. If your file fails to import, please open an issue (remove usernames from any sample you share).
